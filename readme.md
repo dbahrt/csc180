@@ -1,4 +1,4 @@
-# csc200
+# csc180
 
 The final project in this class is to produce a portfolio of at least 50 sample c# programs that demonstrate topics discussed in the class.  This repository will contain a collection of possible (suggested) sample programs provided by the instructor for task #1 (below).
 
@@ -22,4 +22,3 @@ There are lots of opportunities you can use to develop your programming skills:
 1. expand the functionality of the sample program
 2. put the sample program aside, and rewrite it from scratch... as much as possible on your own
 3. choose and implement challenge programs from textbooks, such as "Cracking the Coding Interview," or one of the websites, such as "leetcode.com," or "hackerrank.com," etc.
-
