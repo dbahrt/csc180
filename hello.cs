@@ -15,13 +15,6 @@ public class Startup {
     private const int FAIL=1;
 
     //----------
-    // main() serves as the program entry point.
-    // gotta have one Main() function per program.
-    // it is responsible for:
-    // 1) handling the inputs to the program (command line arguments),
-    // 2) overseeing the program functionality, and
-    // 3) returning the output result of the program.
-    //----------
     public static int Main( string [] args ) {
         Useful.dumpStringArray( args, "command line arguments:" );
 
@@ -33,9 +26,6 @@ public class Startup {
         return result;
     } // end Main() function
 
-    //----------
-    // this driver() function effects the program functionality.
-    // returns SUCCESS if the work gets done; FAIL if it does not.
     //----------
     private static int driver( ) {
         Console.WriteLine("Hello, World.\n");
