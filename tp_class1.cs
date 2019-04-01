@@ -1,9 +1,10 @@
 // source: https://www.tutorialspoint.com/csharp/csharp_classes.htm
 // filename: tp_class1.cs
 // capture date: 29 Mar 2019
+// version: original version as captured from tutorialspoint.com
 // student: Dan Bahrt
-// summary: ...
-// modifications: ...
+// summary: very simple example of object-oriented program
+// modifications: none
 
 
 using System;
