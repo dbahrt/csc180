@@ -1,7 +1,7 @@
 // source: https://github.com/panditakshay/Magic-8-ball/blob/master/Magic-8-Ball/Program.cs
 // author: Pandit Akshay
 // summary: c# magic 8 ball game
-// modifications: ...
+// modifications: eliminated foul-mouthed insults and words;
 // student: Dan Bahrt
 // capture date: 3 Apr 2019
 
@@ -49,17 +49,10 @@ namespace Magic_8_Ball
                 if ( questionString.Length == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("You need to type a question FOOL!");
+                    Console.WriteLine("Please type a question!");
                     continue;
                 }
 
-                //Insult back and close if user insults
-                if ( questionString.ToLower() == "you suck")
-                {
-                    Console.WriteLine("You suck even more! BEHAVE with me A**hole");
-                    break;
-                }
-                
                 //Quit the loop when user types "quit"
                 if ( questionString.ToLower() == "quit")
                 {
@@ -92,11 +85,10 @@ namespace Magic_8_Ball
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("(By: ");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("Klu ");
+            Console.Write("Pandit ");
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write("Klux ");
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Klan)");
+            Console.Write("Akshay ");
+            # Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine();
         }
 
