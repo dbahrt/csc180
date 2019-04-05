@@ -3,7 +3,8 @@
 // summary: c# magic 8 ball game
 // modifications: eliminated foul-mouthed insults and words; eliminated comments;
 //     condensed braces; changed predictions switch for a simple array lookup;
-//     minor code modifications; reworked program exit logic;
+//     minor code modifications; reworked program exit logic; reworkded getQuestion
+//     method; 
 // student: Dan Bahrt
 // capture date: 3 Apr 2019
 
@@ -50,7 +51,7 @@ class Program {
         programInfo();
 
         while (true) {
-            string questionString = getQuestion();
+            string questionString = getQuestion("Ask a question?: ");
 
             int numberOfSecondsToSleep = ((randomObject.Next(5) + 1) * 1000);
             Console.WriteLine("Thinking...");
@@ -88,18 +89,38 @@ class Program {
         Console.Write("Pandit ");
         Console.ForegroundColor = ConsoleColor.Magenta;
         Console.Write("Akshay ");
-        // Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.Write(")");
         Console.WriteLine();
     } // end function programInfo()
 
     //----------
-    static string getQuestion() {
-        Console.ForegroundColor = ConsoleColor.White;
-        Console.Write("Ask a question?: ");
-        Console.ForegroundColor = ConsoleColor.Gray;
-        String questionString = Console.ReadLine();
-        return questionString;
-    } // end function getQuestion()
+    static string getQuestion(string prompt) {
+        for(;;) {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+            Console.Write(prompt);
+        
+            Console.ForegroundColor = ConsoleColor.Gray;
+            String userinput = Console.ReadLine().Trim().ToLower();
+        
+            if((userinput.Length>=2)&&(userinput[userinput.Length-1]=='?')) {
+                return userinput;
+            }
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            if(userinput.Length<2) {
+                Console.Write("Input is too short! ");
+                Console.WriteLine("Try again...");
+                continue;
+            }
+            if(userinput[userinput.Length-1]!='?') {
+                Console.Write("A valid question ends with a \"?\" mark! ");
+                Console.WriteLine("Try again...");
+                continue;
+            }
+        }    
+    } // end function getQuestion()[p
 
     //----------
     static string getValidResponse(string prompt,string [] valid) {
