@@ -53,15 +53,11 @@ class Program {
         while (true) {
             string questionString = getQuestion("Ask a question?: ");
 
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("\nThinking...");
             int numberOfSecondsToSleep = ((randomObject.Next(5) + 1) * 1000);
-            Console.WriteLine("Thinking...");
             Thread.Sleep(numberOfSecondsToSleep);
-
-            if ( questionString.Length == 0) {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Please type a question!");
-                continue;
-            }
+            Console.Write("\r           \r");
 
             definedBallReplies();
             Console.WriteLine();
