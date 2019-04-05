@@ -2,25 +2,46 @@
 // author: Pandit Akshay
 // summary: c# magic 8 ball game
 // modifications: eliminated foul-mouthed insults and words; eliminated comments;
-//     condensed braces; 
+//     condensed braces; changed predictions switch for a simple array lookup; 
 // student: Dan Bahrt
 // capture date: 3 Apr 2019
 
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 
 namespace Magic_8_Ball {
 
+//==========
 class Program {
+
+    static string [] predictions = {
+        "YES!",
+        "NO!",
+        "HELL NO!",
+        "HELL YES!",
+        "It is certain",
+        "It is decidedly so",
+        "Without a doubt",
+        "You may rely on it",
+        "Most likely!",
+        "Outlook good!",
+        "Reply hazy try again!",
+        "Ask again later",
+        "Better not tell you now!",
+        "Cannot predict now",
+        "Concentrate and ask again",
+        "Don't count on it",
+        "My sources say no",
+        "Outlook not so good",
+        "Very doubtful",
+    };
+
     static Random randomObject = new Random();
 
     static ConsoleColor oldColor = Console.ForegroundColor;
 
+    //----------
     static void Main(string[] args) {
            
         programInfo();
@@ -39,7 +60,7 @@ class Program {
             }
 
             if ( questionString.ToLower() == "quit") {
-                return;
+                break;
             }
 
             definedBallReplies();
@@ -47,8 +68,9 @@ class Program {
         }
 
         Console.ForegroundColor = oldColor;
-    }
+    } // end function Main()
 
+    //----------
     static void programInfo() {
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write("Magic ");
@@ -62,117 +84,27 @@ class Program {
         Console.Write("Pandit ");
         Console.ForegroundColor = ConsoleColor.Magenta;
         Console.Write("Akshay ");
-        # Console.ForegroundColor = ConsoleColor.Cyan;
+        // Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine();
-    }
+    } // end function programInfo()
 
+    //----------
     static string getQuestion() {
         Console.ForegroundColor = ConsoleColor.White;
         Console.Write("Ask a question?: ");
         Console.ForegroundColor = ConsoleColor.Gray;
         String questionString = Console.ReadLine();
         return questionString;
-    }
+    } // end function getQuestion()
 
+    //----------
     static void definedBallReplies() {
-        int randomNumber = randomObject.Next(19);
+        Console.ForegroundColor = ConsoleColor.Cyan;
 
-        switch (randomNumber) {
-            case 0:
-                {
-                    Console.WriteLine("YES!");
-                    break;
-                }
-            case 1:
-                {
-                    Console.WriteLine("NO!");
-                    break;
-                }
-            case 2:
-                {
-                    Console.WriteLine("HELL NO!");
-                    break;
-                }
-            case 3:
-                {
-                    Console.WriteLine("HELL YES!");
-                    break;
-                }
-            case 4:
-                {
-                    Console.WriteLine("It is certain");
-                    break;
-                }
-            case 5:
-                {
-                    Console.WriteLine("It is decidedly so");
-                    break;
-                }
-            case 6:
-                {
-                    Console.WriteLine("Without a doubt");
-                    break;
-                }
-            case 7:
-                {
-                    Console.WriteLine("You may rely on it");
-                    break;
-                }
-            case 8:
-                {
-                    Console.WriteLine("Most likely!");
-                    break;
-                }
-            case 9:
-                {
-                    Console.WriteLine("Outlook good!");
-                    break;
-                }
-            case 10:
-                {
-                    Console.WriteLine("Reply hazy try again!");
-                    break;
-                }
-            case 11:
-                {
-                    Console.WriteLine("Ask again later");
-                    break;
-                }
-            case 12:
-                {
-                    Console.WriteLine("Better not tell you now!");
-                    break;
-                }
-            case 13:
-                {
-                    Console.WriteLine("Cannot predict now");
-                    break;
-                }
-            case 14:
-                {
-                    Console.WriteLine("Concentrate and ask again");
-                    break;
-                }
-            case 15:
-                {
-                    Console.WriteLine("Don't count on it");
-                    break;
-                }
-            case 16:
-                {
-                    Console.WriteLine("My sources say no");
-                    break;                }
-            case 17:
-                {
-                    Console.WriteLine("Outlook not so good");
-                    break;
-                }
-            case 18:
-                {
-                    Console.WriteLine("Very doubtful");
-                    break;
-                }
-        }
-    }
-}
-}
+        int randomNumber = randomObject.Next(19);
+        Console.WriteLine(predictions[randomNumber]);
+        Console.WriteLine();
+    } // end function definedBallReplies()
+} // end class Program
+    
+} // end namespace Magic_8_Ball
