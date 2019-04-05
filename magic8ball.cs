@@ -2,7 +2,8 @@
 // author: Pandit Akshay
 // summary: c# magic 8 ball game
 // modifications: eliminated foul-mouthed insults and words; eliminated comments;
-//     condensed braces; changed predictions switch for a simple array lookup; 
+//     condensed braces; changed predictions switch for a simple array lookup;
+//     minor code modifications; reworked program exit logic;
 // student: Dan Bahrt
 // capture date: 3 Apr 2019
 
@@ -41,6 +42,8 @@ class Program {
 
     static ConsoleColor oldColor = Console.ForegroundColor;
 
+    static string [] ynresponses = { "y","n" };
+
     //----------
     static void Main(string[] args) {
            
@@ -59,12 +62,13 @@ class Program {
                 continue;
             }
 
-            if ( questionString.ToLower() == "quit") {
+            definedBallReplies();
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            if(getValidResponse("Again (Y|N)? ",ynresponses)=="n") {
                 break;
             }
-
-            definedBallReplies();
-               
         }
 
         Console.ForegroundColor = oldColor;
@@ -96,6 +100,21 @@ class Program {
         String questionString = Console.ReadLine();
         return questionString;
     } // end function getQuestion()
+
+    //----------
+    static string getValidResponse(string prompt,string [] valid) {
+        for(;;) {
+            Console.Write(prompt);
+            string result=Console.ReadLine().Trim().ToLower();
+            for(int ii=0;ii<valid.Length;ii++) {
+                if(result==valid[ii]) {
+                    return result;
+                }
+            }
+            Console.WriteLine("Invalid input! Try again...");
+            Console.WriteLine();
+        }
+    } // end function getValidResponse()
 
     //----------
     static void definedBallReplies() {
