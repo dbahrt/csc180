@@ -1,7 +1,31 @@
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
 // author: Dan Bahrt
 // sample_data_types.cs (coding_patterns/hello_readStringsFromKeyboard.cs)
 // last updated: 10 Apr 2019
 // command line: sample_data_types.cs < sample.dat > output.txt
+
+// key learnings:
+// 1. programs can be assembled quickly using coding patterns.
+// 2. hello.pat will be an initial component in just about every program 
+//    you will ever write.
+// 3. the read_strings_from_keyboard.pat (or read_strings_from_file.pat) 
+//    patterns are just about as common as the input-processing-output 
+//    pattern is in program design.
+// 4. when data is input from the keyboard (or from a file) as strings, 
+//    those strings must be parsed (converted) into internal data types 
+//    for processing. this conversion process is inherently inefficient
+//    to the point, where possible, it should be avoided.  COBOL went
+//    so far as to provide string arithmetic functions to avoid having
+//    to convert strings at all.
+// 5. an essential part of this data conversion is data validation. Dan
+//    claims that error handling is as big and important as actually  
+//    getting the program working and verifying its functionality. 
+//    protecting the program code from garbage input is akin to removing 
+//    and avoiding program logic errors, AKA bugs.
+// 6. the TryParse() function provides a good example of how to return 
+//    both a boolean status result and an in/ref parameter data result.
+// 7. the TryParse() function is a convenient way of having to wrap 
+//    the Parse() data conversion function in a try...catch block.
 
 using System;
 using System.Collections.Generic;
@@ -71,6 +95,9 @@ public class Startup {
 
     //----------
     private static void tryTryParseConversions(string inpstr) {
+        // we do not need to, in fact, we cannot convert a string 
+        // into a string in order to use it, i.e., there is no
+        // String.TryParse() function.
         Console.WriteLine(inpstr);
         
         Byte outByte;
@@ -128,6 +155,11 @@ public class Startup {
             Console.WriteLine("    Decimal\t"+outDecimal);
         }
           
+        Char outChar;
+        if(Char.TryParse(inpstr,out outChar)) {
+            Console.WriteLine("    Char\t"+outChar);
+        }
+           
         Boolean outBoolean;
         if(Boolean.TryParse(inpstr,out outBoolean)) {
             Console.WriteLine("    Boolean\t"+outBoolean);
@@ -181,7 +213,7 @@ public class Useful {
 
 } // end class Useful
 
-} // end namespace namespacename
+} // end namespace mypgms
 
 /*
 
