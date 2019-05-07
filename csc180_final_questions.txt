@@ -1,44 +1,44 @@
-﻿q20  2  C# provides for a dozen or so data types that are built into the compiler and the code that the compiler generates (called value types).  Everything else is provided via class objects (called reference types).  What is the essential difference between value types and reference types?  Which is more efficient, and why?
+﻿q20,  2,  C# provides for a dozen or so data types that are built into the compiler and the code that the compiler generates (called value types).  Everything else is provided via class objects (called reference types).  What is the essential difference between value types and reference types?  Which is more efficient, and why?
 
-q21  1  What is the difference between a variable and a constant?
+q21,  1,  What is the difference between a variable and a constant?
 
-q22  2  Of what two things does an arithmetic expression consist?
+q22,  2,  Of what two things does an arithmetic expression consist?
 
-q23  8  These components of an arithmetic expression can be combined (or reduced) according to a series of precedence rules.  In mathematical expressions, what gets evaluated first? What gets evaluated second? What gets evaluated third? What gets evaluated last?
+q23,  8,  These components of an arithmetic expression can be combined (or reduced) according to a series of precedence rules.  In mathematical expressions, what gets evaluated first? What gets evaluated second? What gets evaluated third? What gets evaluated last?
 
-q24  1  What can we insert into the expression in order to change the order in which expression components are evaluated, or explicitly specify what order is intended? 
+q24,  1,  What can we insert into the expression in order to change the order in which expression components are evaluated, or explicitly specify what order is intended? 
 
-q25  1  We can use the DataType.Parse(string) static method or the DataType.TryParse(string,out result) method to convert a specified string into an equivalent numeric data value.  Why is the TryParse() method generally more convenient?
+q25,  1,  We can use the DataType.Parse(string) static method or the DataType.TryParse(string,out result) method to convert a specified string into an equivalent numeric data value.  Why is the TryParse() method generally more convenient?
 
-q26  2  The scope of a variable is determined by where you declare it. If you declare a variable within a method, what scope does it have, and where can it be accessed?
+q26,  2,  The scope of a variable is determined by where you declare it. If you declare a variable within a method, what scope does it have, and where can it be accessed?
 
-q27  3  If you declare a variable outside of any method, with a private access modifier,  what scope does it have, and where can it be accessed?  If you declare one of these variables (declared outside of any method), with a public access modifier, where can it additionally be accessed?
+q27,  3,  If you declare a variable outside of any method, with a private access modifier,  what scope does it have, and where can it be accessed?  If you declare one of these variables (declared outside of any method), with a public access modifier, where can it additionally be accessed?
 
-q28  3  How do we specify a string literal? How do we specify an empty string literal? How do we specify a string literal whose value is unknown?
+q28,  3,  How do we specify a string literal? How do we specify an empty string literal? How do we specify a string literal whose value is unknown?
 
-q29  2  How do we insert a quotation mark inside a string literal? How do we insert a newline character inside a string literal?
+q29,  2,  How do we insert a quotation mark inside a string literal? How do we insert a newline character inside a string literal?
 
-q30  6  Relational operators compare two values and return a Boolean value.  What are the six c# relational operators and for what do they return a true value?
+q30,  6,  Relational operators compare two values and return a Boolean value.  What are the six c# relational operators and for what do they return a true value?
 
-q31  6  C# has five logical operators, two of which are called "short-cut" operators.  What are these operators? How are the "short-cut" operators different from the normal logical operators?
+q31,  6,  C# has five logical operators, two of which are called "short-cut" operators.  What are these operators? How are the "short-cut" operators different from the normal logical operators?
 
-q32  1  Under what conditions does the logical AND operator (not what C# calls it) return a true value?
+q32,  1,  Under what conditions does the logical AND operator (not what C# calls it) return a true value?
 
-q33  1  Under what conditions does the logical OR operator (not what C# calls it) return a true value?
+q33,  1,  Under what conditions does the logical OR operator (not what C# calls it) return a true value?
 
-q34  3  What are the three components of every well-formed loop as itemized in the c# for loop?
+q34,  3,  What are the three components of every well-formed loop as itemized in the c# for loop?
 
-q35  1  What is one way of creating an infinite loop, a loop that never ends?
+q35,  1,  What is one way of creating an infinite loop, a loop that never ends?
 
-q36  2  What happens when you insert a continue statement into the code body of a loop? What happens when you insert a break statement into the code body of a loop?
+q36,  2,  What happens when you insert a continue statement into the code body of a loop? What happens when you insert a break statement into the code body of a loop?
 
-q37  1  What does the void return type mean when placed on a method definition?
+q37,  1,  What does the void return type mean when placed on a method definition?
 
-q38  1  In calling or invoking a method, what is the relationship between an argument and a parameter?
+q38,  1,  In calling or invoking a method, what is the relationship between an argument and a parameter?
 
-q39  2  What is the signature of a method which must be unique?  Do the names of the parameters figure into the method signature?
+q39,  2,  What is the signature of a method which must be unique?  Do the names of the parameters figure into the method signature?
 
-q40  1  What is the difference between passing parameters with "call-by-value" and "call-by-reference?" 
+q40,  1,  What is the difference between passing parameters with "call-by-value" and "call-by-reference?" 
 
 
 
